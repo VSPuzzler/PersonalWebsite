@@ -101,3 +101,10 @@
     text-align: justify;
   }
 }
+
+.rounded-pic {
+  border-radius: 50%; /* Makes the image circular */
+  width: 400px; /* Adjust the size as needed */
+  height: 400px; /* Ensures the image remains a square */
+  object-fit: cover; /* Ensures the image fits within the rounded container */
+}
