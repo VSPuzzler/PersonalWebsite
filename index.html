@@ -8,18 +8,21 @@
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   </head>
   <body>
     <nav id="desktop-nav">
       <div class="logo">Vineet Saravanan</div>
       <div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#publications">Publications</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#content-creation">Content</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
       </div>
     </nav>
     <nav id="hamburger-nav">
@@ -32,8 +35,11 @@
         </div>
         <div class="menu-links">
           <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
           <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
           <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#publications" onclick="toggleMenu()">Publications</a></li>
+          <li><a href="#content-creation" onclick="toggleMenu()">Content</a></li>
           <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
         </div>
       </div>
@@ -45,15 +51,15 @@
       <div class="section__text">
         <p class="section__text__p1">Hello, I'm</p>
         <h1 class="title">Vineet Saravanan</h1>
-        <p class="section__text__p2">Avid student in Computer Science, Robotics, and Finance</p>
+        <p class="section__text__p2">CS, Data Science, and Economics @ MIT</p>
         <div class="btn-container">
           <button
             class="btn btn-color-2"
-            onclick="window.open('https://leetcode.com/u/vspuzzler/', '_blank')"
+            onclick="window.open('https://github.com/VSPuzzler', '_blank')"
           >
-            Leetcode Profile
+            GitHub
           </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
+          <button class="btn btn-color-1" onclick="location.href='#contact'">
             Contact Info
           </button>
         </div>
@@ -68,8 +74,10 @@
             src="./assets/github.png"
             alt="My Github profile"
             class="icon"
-            onclick="window.open('https://linkedin.com/in/vineet-saravanan', '_blank')"
+            onclick="window.open('https://github.com/VSPuzzler', '_blank')"
           />
+          <i class="fa-brands fa-youtube icon-fa" onclick="window.open('https://www.youtube.com/vspuzzler', '_blank')"></i>
+          <i class="fa-brands fa-instagram icon-fa" onclick="window.open('https://www.instagram.com/vineets.mp4/', '_blank')"></i>
         </div>
       </div>
     </section>
@@ -93,7 +101,7 @@
                 class="icon"
               />
               <h3>Experience</h3>
-              <p>5+ years <br />Software Development</p>
+              <p>Full-Stack Development <br />AI & Research</p>
             </div>
             <div class="details-container">
               <img
@@ -102,17 +110,15 @@
                 class="icon"
               />
               <h3>Education</h3>
-              <p>High School Student<br />Senior</p>
+              <p>Massachusetts Institute of Technology<br />BS in CS, Data Science, & Economics</p>
             </div>
           </div>
           <div class="text-container">
             <p>
-              I am passionate about computer science, finance, and robotics. I 
-              love to explore the intersection between software and finance and 
-              take advantage of my knowledge of both. I have attended numerous 
-              science fairs and conferences, specifically in the field of artificial 
-              intelligence and robotics. I want to inspire and encourage others in 
-              the field.
+              I am a student at MIT pursuing Computer Science, Data Science, and Economics. 
+              As the Co-Founder & COO of Wagoo (wagoo.ai), I build AI screen-aware desktop assistants. 
+              My background spans full-stack development, LLM integration, and multimodal research at MIT CSAIL. 
+              I am passionate about building tools that reduce friction and exploring the intersection of AI, finance, and robotics.
             </p>
           </div>
         </div>
@@ -121,119 +127,97 @@
         src="./assets/arrow.png"
         alt="Arrow icon"
         class="icon arrow"
-        onclick="location.href='./#experience'"
+        onclick="location.href='#experience'"
       />
     </section>
-    <section id="experience">
+    <section id="skills">
       <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Experience</h1>
+      <h1 class="title">Skills</h1>
       <div class="experience-details-container">
         <div class="about-containers">
           <div class="details-container">
-            <h2 class="experience-sub-title">Programming</h2>
+            <h2 class="experience-sub-title">Languages & Frameworks</h2>
             <div class="article-container">
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>HTML</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>CSS</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
                 <div>
                   <h3>Python</h3>
                   <p>Experienced</p>
                 </div>
               </article>
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
                 <div>
-                  <h3>C/C++</h3>
-                  <p>Intermediate</p>
+                  <h3>Java</h3>
+                  <p>Experienced</p>
                 </div>
               </article>
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
                 <div>
-                  <h3>PineScript</h3>
-                  <p>Intermediate</p>
+                  <h3>C++</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>Node.js</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>PyTorch</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>Supabase</h3>
+                  <p>Experienced</p>
                 </div>
               </article>
             </div>
           </div>
           <div class="details-container">
-            <h2 class="experience-sub-title">Other</h2>
+            <h2 class="experience-sub-title">Tools & Others</h2>
             <div class="article-container">
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
                 <div>
-                  <h3>Machine Learning</h3>
-                  <p>Intermediate</p>
+                  <h3>AWS</h3>
+                  <p>Experienced</p>
                 </div>
               </article>
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
                 <div>
-                  <h3>Natural Language Processing</h3>
-                  <p>Intermediate</p>
+                  <h3>Docker</h3>
+                  <p>Experienced</p>
                 </div>
               </article>
               <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Bioinformatics</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
                 <div>
                   <h3>Git</h3>
-                  <p>Intermediate</p>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>Fusion 360</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>Unity</h3>
+                  <p>Experienced</p>
                 </div>
               </article>
             </div>
@@ -244,7 +228,56 @@
         src="./assets/arrow.png"
         alt="Arrow icon"
         class="icon arrow"
-        onclick="location.href='./#projects'"
+        onclick="location.href='#experience'"
+      />
+    </section>
+    <section id="experience">
+      <p class="section__text__p1">Browse My</p>
+      <h1 class="title">Work Experience</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container">
+            <h2 class="experience-sub-title">Wagoo (wagoo.ai)</h2>
+            <p>Co-Founder & COO | July 2025 - Present</p>
+            <ul style="text-align: left; margin: 1rem 2rem;">
+              <li>Developed and launched an AI screen-aware desktop assistant that reduces friction for users and is growing 25% WoW.</li>
+              <li>Built full-stack Electron application with backend and website, and integrated local LLMs for enterprise privacy.</li>
+              <li>Building conversational voice agent to control hundreds of tools using MCPs using ElevenLabs and LiveKit.</li>
+            </ul>
+          </div>
+          <div class="details-container">
+            <h2 class="experience-sub-title">Rockbridge Growth Equity</h2>
+            <p>Intern | May 2025 - June 2025</p>
+            <ul style="text-align: left; margin: 1rem 2rem;">
+              <li>Conducted due diligence on 5+ prospective acquisition targets.</li>
+              <li>Developed Python tool for automated CIM analysis and one-pager generation.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="about-containers">
+          <div class="details-container">
+            <h2 class="experience-sub-title">Intrepid Control Systems</h2>
+            <p>Embedded Intern | July 2024 - Sept 2024</p>
+            <ul style="text-align: left; margin: 1rem 2rem;">
+              <li>Increased vehicle testing efficiency by 25% via custom scripts.</li>
+              <li>Revamped icsneo codebase for enhanced user experience with hardware.</li>
+            </ul>
+          </div>
+          <div class="details-container">
+            <h2 class="experience-sub-title">MIT CSAIL</h2>
+            <p>Researcher | Sept 2025 - Present</p>
+            <ul style="text-align: left; margin: 1rem 2rem;">
+              <li>Developing image and pen-trajectory algorithms for digit classification.</li>
+              <li>Detecting correction behaviors in Digital Symbol Tests.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='#projects'"
       />
     </section>
     <section id="projects">
@@ -255,42 +288,36 @@
           <div class="details-container color-container">
             <div class="article-container">
               <img
-                src="./assets/project-1.png"
-                alt="Project 1"
+                src="./assets/Wagoo.jpeg"
+                alt="Wagoo"
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">Puzzler Foundation</h2>
+            <h2 class="experience-sub-title project-title">Wagoo</h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="window.open('https://www.puzzlerfoundation.org/', '_blank')"
+                onclick="window.open('https://wagoo.ai', '_blank')"
               >
-                Live Demo
+                Website
               </button>
             </div>
           </div>
           <div class="details-container color-container">
             <div class="article-container">
               <img
-                src="./assets/project-2.png"
-                alt="Project 2"
+                src="./assets/clash-scan-logo.png"
+                alt="Clash Scan"
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">Puzzler Trades</h2>
+            <h2 class="experience-sub-title project-title">Clash Scan</h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="window.open('https://www.fiverr.com/vs_puzzler', '_blank')"
+                onclick="window.open('https://clashscan.com', '_blank')"
               >
-                Fiverr
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="window.open('https://www.tradingview.com/u/PuzzlerTrades/#published-scripts', '_blank')"
-              >
-                Portfolio
+                Website
               </button>
             </div>
           </div>
@@ -298,23 +325,17 @@
             <div class="article-container">
               <img
                 src="./assets/project-3.png"
-                alt="Project 3"
+                alt="EEG-To-Text"
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">Improved Brain Aneurysm Diagnosis and Detection</h2>
+            <h2 class="experience-sub-title project-title">EEG-To-Text</h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="window.open('https://github.com/VSPuzzler/BrainAneurysm', '_blank')"
+                onclick="window.open('https://github.com/VSPuzzler', '_blank')"
               >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="window.open('https://github.com/VSPuzzler/WebApp', '_blank')"
-              >
-                Static Demo Code
+                GitHub
               </button>
             </div>
           </div>
@@ -324,7 +345,7 @@
         src="./assets/arrow.png"
         alt="Arrow icon"
         class="icon arrow"
-        onclick="location.href='./#publications'"
+        onclick="location.href='#publications'"
       />
     </section>
     <section id="publications">
@@ -333,33 +354,18 @@
       <div class="experience-details-container">
         <div class="about-containers">
           <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/publication-1.png"
-                alt="Project 1"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Enhanced Brain Arteries and Aneurysms Analysis Using CAE-CFD Approach</h2>
+            <h2 class="experience-sub-title project-title">ACL 2025: Design of a Multilevel Propaganda-Classification System</h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="window.open('https://doi.org/10.59720/24-156', '_blank')"
+                onclick="window.open('https://aclanthology.org/', '_blank')"
               >
                 Paper Link
               </button>
             </div>
           </div>
           <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/publication-2.png"
-                alt="Project 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">OUNLP at SemEval-2024 Task 9: Retrieval-Augmented Generation for
-              Solving Brain Teasers with LLMs</h2>
+            <h2 class="experience-sub-title project-title">NAACL 2024: OUNLP at SemEval-2024 Task 9: Retrieval-Augmented Generation for Solving Brain Teasers with LLMs</h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
@@ -369,20 +375,25 @@
               </button>
             </div>
           </div>
+        </div>
+        <div class="about-containers">
           <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/publication-3.png"
-                alt="Project 3"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Mr-wallace at SemEval-2023 Task 5: Novel Clickbait Spoiling Algorithm
-              Using Natural Language Processing</h2>
+            <h2 class="experience-sub-title project-title">ACL 2023: Mr-wallace at SemEval-2023 Task 5: Novel Clickbait Spoiling Algorithm Using Natural Language Processing</h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
                 onclick="window.open('https://aclanthology.org/2023.semeval-1.225.pdf', '_blank')"
+              >
+                Paper Link
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <h2 class="experience-sub-title project-title">JEI 2024: Enhanced Brain Arteries and Aneurysms Analysis Using CAE-CFD Approach</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="window.open('https://doi.org/10.59720/24-156', '_blank')"
               >
                 Paper Link
               </button>
@@ -394,7 +405,45 @@
         src="./assets/arrow.png"
         alt="Arrow icon"
         class="icon arrow"
-        onclick="location.href='./#contact'"
+        onclick="location.href='#content-creation'"
+      />
+    </section>
+    <section id="content-creation">
+      <p class="section__text__p1">Explore My</p>
+      <h1 class="title">Content Creation</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container color-container">
+            <h2 class="experience-sub-title">YouTube</h2>
+            <p>@vspuzzler</p>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="window.open('https://www.youtube.com/vspuzzler', '_blank')"
+              >
+                Watch Channel
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <h2 class="experience-sub-title">Instagram</h2>
+            <p>@vineets.mp4</p>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="window.open('https://www.instagram.com/vineets.mp4/', '_blank')"
+              >
+                Follow Profile
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img
+        src="./assets/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="location.href='#contact'"
       />
     </section>
     <section id="contact">
@@ -407,7 +456,15 @@
             alt="Email icon"
             class="icon contact-icon email-icon"
           />
-          <p><a href="vineetsaravanan@gmail.com">vineetsaravanan@gmail.com</a></p>
+          <p><a href="mailto:vineet7@mit.edu">vineet7@mit.edu</a></p>
+        </div>
+        <div class="contact-info-container">
+          <img
+            src="./assets/email.png"
+            alt="Email icon"
+            class="icon contact-icon email-icon"
+          />
+          <p><a href="mailto:vineetsaravanan@gmail.com">vineetsaravanan@gmail.com</a></p>
         </div>
         <div class="contact-info-container">
           <img
@@ -417,6 +474,14 @@
           />
           <p><a href="https://linkedin.com/in/vineet-saravanan" target="_blank">LinkedIn</a></p>
         </div>
+        <div class="contact-info-container">
+          <i class="fa-brands fa-youtube icon"></i>
+          <p><a href="https://www.youtube.com/vspuzzler" target="_blank">YouTube</a></p>
+        </div>
+        <div class="contact-info-container">
+          <i class="fa-brands fa-instagram icon"></i>
+          <p><a href="https://www.instagram.com/vineets.mp4/" target="_blank">Instagram</a></p>
+        </div>
       </div>
     </section>
     <footer>
@@ -424,9 +489,11 @@
         <div class="nav-links-container">
           <ul class="nav-links">
             <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#publications">Publications</a></li>
+            <li><a href="#content-creation">Content</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
