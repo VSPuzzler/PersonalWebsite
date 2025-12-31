@@ -55,8 +55,18 @@
     mobileContent: document.getElementById('mobile-content'),
     mobileContentTitle: document.getElementById('mobile-content-title'),
     mobileContentBody: document.getElementById('mobile-content-body'),
-    mobileBackBtn: document.getElementById('mobile-back-btn')
+    mobileBackBtn: document.getElementById('mobile-back-btn'),
+    mobileClock: document.getElementById('mobile-clock'),
+    mobileCrtToggle: document.getElementById('mobile-crt-toggle'),
+    mobileSoundToggle: document.getElementById('mobile-sound-toggle')
   };
+  
+  // Getter for mobile content body (needed because it might be referenced before DOM fully loaded)
+  Object.defineProperty(elements, 'mobileContentBodyEl', {
+    get: function() {
+      return document.getElementById('mobile-content-body');
+    }
+  });
 
   // ========================================
   // Sound Effects (optional)
@@ -113,7 +123,15 @@
     const ampm = hours >= 12 ? 'PM' : 'AM';
     const displayHours = hours % 12 || 12;
 
-    elements.taskbarClock.textContent = `${displayHours}:${minutes} ${ampm}`;
+    const timeString = `${displayHours}:${minutes} ${ampm}`;
+    
+    if (elements.taskbarClock) {
+      elements.taskbarClock.textContent = timeString;
+    }
+    
+    if (elements.mobileClock) {
+      elements.mobileClock.textContent = timeString;
+    }
   }
 
   // ========================================
@@ -524,10 +542,12 @@
 
     if (state.crtEnabled) {
       elements.crtOverlay.classList.remove('hidden');
-      elements.crtToggle.classList.add('active');
+      if (elements.crtToggle) elements.crtToggle.classList.add('active');
+      if (elements.mobileCrtToggle) elements.mobileCrtToggle.classList.add('active');
     } else {
       elements.crtOverlay.classList.add('hidden');
-      elements.crtToggle.classList.remove('active');
+      if (elements.crtToggle) elements.crtToggle.classList.remove('active');
+      if (elements.mobileCrtToggle) elements.mobileCrtToggle.classList.remove('active');
     }
   }
 
@@ -539,11 +559,23 @@
     state.soundEnabled = !state.soundEnabled;
 
     if (state.soundEnabled) {
-      elements.soundToggle.classList.remove('muted');
-      elements.soundToggle.classList.add('active');
+      if (elements.soundToggle) {
+        elements.soundToggle.classList.remove('muted');
+        elements.soundToggle.classList.add('active');
+      }
+      if (elements.mobileSoundToggle) {
+        elements.mobileSoundToggle.classList.remove('muted');
+        elements.mobileSoundToggle.classList.add('active');
+      }
     } else {
-      elements.soundToggle.classList.add('muted');
-      elements.soundToggle.classList.remove('active');
+      if (elements.soundToggle) {
+        elements.soundToggle.classList.add('muted');
+        elements.soundToggle.classList.remove('active');
+      }
+      if (elements.mobileSoundToggle) {
+        elements.mobileSoundToggle.classList.add('muted');
+        elements.mobileSoundToggle.classList.remove('active');
+      }
     }
   }
 
@@ -553,23 +585,29 @@
 
   function checkMobile() {
     const wasMobile = state.isMobile;
-    state.isMobile = window.innerWidth < 768;
+    // Check for both width and touch capability
+    state.isMobile = window.innerWidth < 768 || (window.innerWidth < 1024 && 'ontouchstart' in window);
 
-    if (state.isMobile !== wasMobile) {
-      if (state.isMobile) {
-        // Switch to mobile mode
-        elements.desktop.classList.add('hidden');
-        elements.taskbar.classList.add('hidden');
-        elements.mobileDrawer.classList.remove('hidden');
-        closeAllWindows();
-      } else {
-        // Switch to desktop mode
-        elements.desktop.classList.remove('hidden');
-        elements.taskbar.classList.remove('hidden');
-        elements.mobileDrawer.classList.add('hidden');
-        elements.mobileContent.classList.add('hidden');
-      }
+    // Always update UI based on current mobile state (not just on change)
+    if (state.isMobile) {
+      // Switch to mobile mode
+      if (elements.desktop) elements.desktop.classList.add('hidden');
+      if (elements.taskbar) elements.taskbar.classList.add('hidden');
+      if (elements.mobileDrawer) elements.mobileDrawer.classList.remove('hidden');
+      closeAllWindows();
+    } else {
+      // Switch to desktop mode
+      if (elements.desktop) elements.desktop.classList.remove('hidden');
+      if (elements.taskbar) elements.taskbar.classList.remove('hidden');
+      if (elements.mobileDrawer) elements.mobileDrawer.classList.add('hidden');
+      if (elements.mobileContent) elements.mobileContent.classList.add('hidden');
     }
+  }
+
+  // Fix iOS viewport height issue
+  function setVH() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
   }
 
   function closeAllWindows() {
@@ -738,13 +776,39 @@
     });
 
     // CRT toggle
-    elements.crtToggle.addEventListener('click', toggleCRT);
+    if (elements.crtToggle) {
+      elements.crtToggle.addEventListener('click', toggleCRT);
+    }
+    if (elements.mobileCrtToggle) {
+      elements.mobileCrtToggle.addEventListener('click', toggleCRT);
+    }
 
     // Sound toggle
-    elements.soundToggle.addEventListener('click', toggleSound);
+    if (elements.soundToggle) {
+      elements.soundToggle.addEventListener('click', toggleSound);
+    }
+    if (elements.mobileSoundToggle) {
+      elements.mobileSoundToggle.addEventListener('click', toggleSound);
+    }
 
-    // Mobile drawer apps
+    // Mobile drawer apps - with touch feedback
     document.querySelectorAll('.drawer-app').forEach(app => {
+      // Touch start for immediate visual feedback
+      app.addEventListener('touchstart', (e) => {
+        app.style.transform = 'scale(0.95)';
+        app.style.opacity = '0.8';
+      }, { passive: true });
+      
+      app.addEventListener('touchend', () => {
+        app.style.transform = '';
+        app.style.opacity = '';
+      }, { passive: true });
+      
+      app.addEventListener('touchcancel', () => {
+        app.style.transform = '';
+        app.style.opacity = '';
+      }, { passive: true });
+      
       app.addEventListener('click', () => {
         const windowId = app.dataset.window;
         if (windowId) {
@@ -753,8 +817,34 @@
       });
     });
 
-    // Mobile back button
+    // Mobile back button - with touch feedback
+    elements.mobileBackBtn.addEventListener('touchstart', () => {
+      elements.mobileBackBtn.style.transform = 'scale(0.9)';
+    }, { passive: true });
+    
+    elements.mobileBackBtn.addEventListener('touchend', () => {
+      elements.mobileBackBtn.style.transform = '';
+    }, { passive: true });
+    
     elements.mobileBackBtn.addEventListener('click', closeMobileContent);
+    
+    // Prevent iOS bounce effect on mobile drawer and content
+    if ('ontouchstart' in window) {
+      [elements.mobileDrawer, elements.mobileContentBody].forEach(el => {
+        if (!el) return;
+        el.addEventListener('touchmove', (e) => {
+          const scrollTop = el.scrollTop;
+          const scrollHeight = el.scrollHeight;
+          const clientHeight = el.clientHeight;
+          
+          // Allow scrolling within bounds
+          if ((scrollTop <= 0 && e.touches[0].clientY > e.touches[0].screenY) ||
+              (scrollTop + clientHeight >= scrollHeight && e.touches[0].clientY < e.touches[0].screenY)) {
+            // At bounds - but don't prevent, let iOS handle naturally
+          }
+        }, { passive: true });
+      });
+    }
 
     // Responsive
     window.addEventListener('resize', checkMobile);
@@ -784,18 +874,41 @@
   // ========================================
 
   function init() {
+    // Fix iOS viewport height
+    setVH();
+    window.addEventListener('resize', setVH);
+    window.addEventListener('orientationchange', () => {
+      setTimeout(setVH, 100);
+    });
+
     // Update clock immediately and then every minute
     updateClock();
     setInterval(updateClock, 1000);
 
-    // Check mobile state
+    // Check mobile state and initialize UI - do this first
     checkMobile();
+    
+    // Force initial mobile drawer visibility on mobile (double-check)
+    if (state.isMobile) {
+      if (elements.desktop) elements.desktop.classList.add('hidden');
+      if (elements.taskbar) elements.taskbar.classList.add('hidden');
+      if (elements.mobileDrawer) {
+        elements.mobileDrawer.classList.remove('hidden');
+      }
+    } else {
+      if (elements.mobileDrawer) elements.mobileDrawer.classList.add('hidden');
+    }
 
     // Initialize event listeners
     initEventListeners();
 
     // Set initial sound toggle state
-    elements.soundToggle.classList.add('active');
+    if (elements.soundToggle) {
+      elements.soundToggle.classList.add('active');
+    }
+    if (elements.mobileSoundToggle) {
+      elements.mobileSoundToggle.classList.add('active');
+    }
 
     // Remove boot screen after animation
     setTimeout(() => {

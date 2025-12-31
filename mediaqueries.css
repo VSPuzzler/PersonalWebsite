@@ -12,17 +12,54 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-  z-index: 100;
+  height: 100dvh;
+  /* Semi-transparent background so wallpaper shows through */
+  background: rgba(26, 26, 46, 0.85);
+  backdrop-filter: blur(2px);
+  z-index: 200;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   padding: var(--space-lg);
-  padding-bottom: 100px;
+  padding-top: calc(var(--space-lg) + var(--safe-area-top));
+  padding-bottom: calc(100px + var(--safe-area-bottom));
+  padding-left: calc(var(--space-lg) + var(--safe-area-left));
+  padding-right: calc(var(--space-lg) + var(--safe-area-right));
+}
+
+/* Show mobile drawer by default on mobile screens */
+@media screen and (max-width: 768px) {
+  #mobile-drawer {
+    display: block !important;
+  }
+  
+  #mobile-drawer.hidden {
+    display: none !important;
+  }
 }
 
 .drawer-header {
   text-align: center;
   padding: var(--space-xl) 0;
   margin-bottom: var(--space-lg);
+  position: relative;
+  z-index: 10;
+  background: rgba(26, 26, 46, 0.3);
+  backdrop-filter: blur(4px);
+  border-radius: var(--radius-lg);
+  margin: 0 auto var(--space-lg);
+  padding: var(--space-lg);
+  max-width: 90%;
+}
+
+.drawer-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1px;
+  background: rgba(0, 255, 208, 0.3);
 }
 
 .drawer-avatar {
@@ -38,12 +75,9 @@
 .drawer-header h2 {
   font-family: var(--font-retro);
   font-size: 2rem;
-  color: #fff;
   margin-bottom: var(--space-xs);
-  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  /* Solid color - no gradient */
+  color: var(--accent-primary);
 }
 
 .drawer-header p {
@@ -58,6 +92,8 @@
   gap: var(--space-md);
   max-width: 400px;
   margin: 0 auto;
+  position: relative;
+  z-index: 10;
 }
 
 .drawer-app {
@@ -66,22 +102,22 @@
   align-items: center;
   gap: var(--space-sm);
   padding: var(--space-lg) var(--space-sm);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--radius-lg);
   color: #fff;
   text-decoration: none;
   transition: all 0.2s ease;
   font-family: var(--font-mono);
   font-size: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .drawer-app i {
   font-size: 1.5rem;
-  background: linear-gradient(135deg, var(--accent-secondary) 0%, var(--accent-tertiary) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  /* Solid color - no gradient */
+  color: var(--accent-secondary);
 }
 
 .drawer-app:hover,
@@ -97,10 +133,35 @@
 }
 
 .drawer-app.external i {
-  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-teal) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  /* Solid color - no gradient */
+  color: var(--accent-primary);
+}
+
+.drawer-disclaimer {
+  position: fixed;
+  bottom: calc(220px + var(--safe-area-bottom));
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-md);
+  background: rgba(99, 102, 241, 0.25);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  border-radius: var(--radius-md);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.8);
+  z-index: 15;
+  white-space: nowrap;
+  box-shadow: 0 2px 12px rgba(99, 102, 241, 0.3);
+  pointer-events: none;
+}
+
+.drawer-disclaimer i {
+  font-size: 0.75rem;
+  color: var(--accent-secondary);
 }
 
 .drawer-footer {
@@ -109,10 +170,33 @@
   left: 0;
   width: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  padding-bottom: calc(var(--space-lg) + var(--safe-area-bottom));
+  /* Semi-transparent with blur for glass effect */
+  background: rgba(26, 26, 46, 0.85);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(0, 255, 208, 0.2);
+  z-index: 10;
+}
+
+.drawer-clock {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.7);
+  padding: var(--space-xs) var(--space-md);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+}
+
+.drawer-footer-icons {
+  display: flex;
   justify-content: center;
   gap: var(--space-lg);
-  padding: var(--space-lg);
-  background: linear-gradient(180deg, transparent 0%, rgba(26, 26, 46, 0.95) 50%);
+  width: 100%;
 }
 
 .drawer-footer a {
@@ -136,6 +220,36 @@
   box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
 }
 
+.drawer-controls {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-top: var(--space-sm);
+}
+
+.drawer-control-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-sm);
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.drawer-control-btn:hover,
+.drawer-control-btn.active {
+  background: var(--accent-secondary);
+  border-color: var(--accent-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+}
+
 /* ========================================
    Mobile Content Panel
    ======================================== */
@@ -146,6 +260,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+  height: 100dvh;
   background: var(--bg-primary);
   z-index: 200;
   display: flex;
@@ -169,7 +284,9 @@
   align-items: center;
   gap: var(--space-md);
   padding: var(--space-md) var(--space-lg);
-  background: linear-gradient(135deg, var(--accent-secondary) 0%, var(--accent-tertiary) 100%);
+  padding-top: calc(var(--space-md) + var(--safe-area-top));
+  /* Solid color - no gradient */
+  background: var(--accent-secondary);
   color: #fff;
   flex-shrink: 0;
 }
@@ -201,7 +318,9 @@
 #mobile-content-body {
   flex: 1;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   padding: var(--space-lg);
+  padding-bottom: calc(var(--space-lg) + var(--safe-area-bottom));
   background: rgba(255, 255, 255, 0.5);
 }
 
@@ -354,13 +473,60 @@
     font-size: 0.75rem;
   }
 
-  /* Hide wallpaper character on mobile */
+  /* Show wallpaper character on mobile (smaller, more visible) */
   .wallpaper-character {
-    display: none;
+    display: block !important;
+    visibility: visible !important;
+    bottom: 12% !important;
+    right: 2% !important;
+    transform: scale(0.55) !important;
+    opacity: 0.8 !important;
+    z-index: 1 !important;
+    pointer-events: none;
+  }
+  
+  .retro-computer {
+    display: flex !important;
+    visibility: visible !important;
+  }
+  
+  .computer-screen,
+  .computer-base,
+  .computer-stand,
+  .keyboard {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
+  /* Show floating elements on mobile (more visible) */
   .floating-elements {
-    display: none;
+    display: block !important;
+    z-index: 1;
+  }
+
+  .floating-star,
+  .floating-pixel {
+    opacity: 0.6;
+  }
+
+  /* Ensure wallpaper background is visible on mobile */
+  #desktop-wallpaper {
+    display: block !important;
+    z-index: 0;
+  }
+
+  .grid-pattern {
+    opacity: 0.7;
+  }
+
+  .gradient-overlay {
+    opacity: 0.9;
+  }
+  
+  /* Make sure mobile drawer doesn't completely block the computer */
+  #mobile-drawer {
+    background: rgba(26, 26, 46, 0.7) !important;
   }
 }
 
@@ -369,6 +535,20 @@
    ======================================== */
 
 @media screen and (max-width: 480px) {
+  .drawer-disclaimer {
+    font-size: 0.65rem;
+    padding: var(--space-xs) var(--space-sm);
+    bottom: calc(180px + var(--safe-area-bottom));
+  }
+  
+  .drawer-disclaimer span {
+    display: none;
+  }
+  
+  .drawer-disclaimer::after {
+    content: 'View on desktop for the best experience';
+  }
+
   .drawer-apps {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-sm);
@@ -637,7 +817,7 @@
 
 @media screen and (max-width: 900px) and (orientation: landscape) {
   #mobile-drawer {
-    padding-top: var(--space-md);
+    padding-top: calc(var(--space-md) + var(--safe-area-top));
   }
 
   .drawer-header {
@@ -665,10 +845,167 @@
 
   .drawer-footer {
     padding: var(--space-sm);
+    padding-bottom: calc(var(--space-sm) + var(--safe-area-bottom));
   }
 
   .drawer-footer a {
     width: 40px;
     height: 40px;
+  }
+}
+
+/* ========================================
+   iPhone Specific Fixes
+   ======================================== */
+
+/* iPhone SE, iPhone 8 and smaller (375px width) */
+@media screen and (max-width: 375px) {
+  .drawer-apps {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-sm);
+  }
+  
+  .drawer-app {
+    padding: var(--space-sm) var(--space-xs);
+  }
+  
+  .drawer-app i {
+    font-size: 1.2rem;
+  }
+  
+  .drawer-app span {
+    font-size: 0.6rem;
+  }
+  
+  .drawer-avatar {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .drawer-header h2 {
+    font-size: 1.4rem;
+  }
+  
+  .drawer-header p {
+    font-size: 0.75rem;
+  }
+  
+  #mobile-content-body {
+    padding: var(--space-md);
+  }
+  
+  #mobile-content-body .about-intro h1 {
+    font-size: 1.3rem;
+  }
+  
+  #mobile-content-body .about-avatar {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .mobile-content-header {
+    padding: var(--space-sm) var(--space-md);
+    padding-top: calc(var(--space-sm) + var(--safe-area-top));
+  }
+  
+  #mobile-content-title {
+    font-size: 1rem;
+  }
+  
+  #mobile-back-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+}
+
+/* iPhone Pro Max and larger phones (430px+) */
+@media screen and (min-width: 390px) and (max-width: 768px) {
+  .drawer-apps {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+    max-width: 340px;
+  }
+  
+  .drawer-app {
+    padding: var(--space-lg) var(--space-md);
+  }
+  
+  .drawer-app i {
+    font-size: 1.75rem;
+  }
+  
+  .drawer-avatar {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+/* iOS Touch Improvements */
+@supports (-webkit-touch-callout: none) {
+  /* iOS-specific styles */
+  body {
+    /* Prevent iOS rubber-band scrolling on body */
+    position: fixed;
+    width: 100%;
+  }
+  
+  #mobile-drawer,
+  #mobile-content-body,
+  .window-content {
+    /* Enable momentum scrolling */
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Improve touch targets for iOS */
+  .drawer-app {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .drawer-footer a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  #mobile-back-btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .social-links a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .contact-card {
+    min-height: 60px;
+  }
+  
+  .project-link,
+  .pub-link,
+  .media-link {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+/* Dynamic Island / Notch Support for iPhone 14 Pro+ */
+@supports (padding: max(0px)) {
+  #mobile-drawer {
+    padding-top: max(var(--space-lg), calc(var(--safe-area-top) + var(--space-md)));
+  }
+  
+  .mobile-content-header {
+    padding-top: max(var(--space-md), calc(var(--safe-area-top) + var(--space-sm)));
+  }
+  
+  .drawer-footer {
+    padding-bottom: max(var(--space-lg), calc(var(--safe-area-bottom) + var(--space-sm)));
+  }
+  
+  #mobile-content-body {
+    padding-bottom: max(var(--space-lg), calc(var(--safe-area-bottom) + var(--space-md)));
   }
 }
