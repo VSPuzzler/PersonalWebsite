@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <!-- Primary Meta Tags -->
     <title>Vineet Saravanan | MIT CS, Data Science & Economics | Wagoo Co-Founder</title>
     <meta name="title" content="Vineet Saravanan | MIT CS, Data Science & Economics | Wagoo Co-Founder" />
@@ -54,315 +54,696 @@
     }
     </script>
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   </head>
   <body>
-    <!-- Desktop Navigation -->
-    <nav id="desktop-nav">
-      <div class="logo">Vineet Saravanan</div>
-        <ul class="nav-links">
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#publications">Publications</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#content-creation">Content</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <!-- Mobile Navigation -->
-    <nav id="hamburger-nav">
-      <div class="logo">Vineet Saravanan</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <ul class="menu-links">
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#publications" onclick="toggleMenu()">Publications</a></li>
-          <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#content-creation" onclick="toggleMenu()">Content</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <!-- 1. Profile Section -->
-    <section id="profile">
-      <div class="section__pic-container">
-        <img src="./assets/profile-pic.png" alt="Vineet Saravanan" loading="eager"/>
-      </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Vineet Saravanan</h1>
-        <p class="section__text__p2">Computer Science, Data Science, and Economics @ MIT</p>
-        <div class="btn-container">
-          <button class="btn btn-color-2" onclick="window.open('https://github.com/VSPuzzler', '_blank', 'noopener noreferrer')">
-            GitHub
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='#contact'">
-            Contact Info
-          </button>
-        </div>
-        <div id="socials-container">
-          <i class="fa-brands fa-linkedin icon-fa" onclick="window.open('https://linkedin.com/in/vineet-saravanan', '_blank', 'noopener noreferrer')"></i>
-          <i class="fa-brands fa-github icon-fa" onclick="window.open('https://github.com/VSPuzzler', '_blank', 'noopener noreferrer')"></i>
-          <i class="fa-brands fa-youtube icon-fa" onclick="window.open('https://www.youtube.com/vspuzzler', '_blank', 'noopener noreferrer')"></i>
-          <i class="fa-brands fa-instagram icon-fa" onclick="window.open('https://www.instagram.com/vineets.mp4/', '_blank', 'noopener noreferrer')"></i>
+    <!-- Boot Screen -->
+    <div id="boot-screen">
+      <div class="boot-content">
+        <div class="boot-logo">VS</div>
+        <div class="boot-text">
+          <span class="boot-line">VineetOS v1.0</span>
+          <span class="boot-line">Loading system...</span>
+          <span class="boot-line boot-progress"></span>
         </div>
       </div>
-      <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#experience'"/>
-    </section>
+    </div>
 
-    <!-- 2. Experience Section -->
-    <section id="experience">
-      <p class="section__text__p1">Browse My</p>
-      <h1 class="title">Work Experience</h1>
-      <div class="timeline">
-        <div class="timeline-item left">
-          <div class="timeline-dot"><i class="fa-solid fa-briefcase"></i></div>
-          <div class="timeline-date">2025 - Present</div>
-          <div class="timeline-content">
-            <h3>MIT CSAIL</h3>
-            <p>Researcher developing digit classification and DST behavior detection algorithms.</p>
-          </div>
-        </div>
-        <div class="timeline-item right">
-          <div class="timeline-dot"><i class="fa-solid fa-rocket"></i></div>
-          <div class="timeline-date">2025 - Present</div>
-          <div class="timeline-content">
-            <h3>Wagoo (wagoo.ai)</h3>
-            <p>Co-Founder building screen-aware AI and voice agents with MCPs.</p>
-          </div>
-        </div>
-        <div class="timeline-item left">
-          <div class="timeline-dot"><i class="fa-solid fa-chart-line"></i></div>
-          <div class="timeline-date">2025</div>
-          <div class="timeline-content">
-            <h3>Rockbridge Growth Equity</h3>
-            <p>Conducted due diligence and built automated Python CIM analysis tools.</p>
-          </div>
-        </div>
-        <div class="timeline-item right">
-          <div class="timeline-dot"><i class="fa-solid fa-microchip"></i></div>
-          <div class="timeline-date">2024</div>
-          <div class="timeline-content">
-            <h3>Intrepid Control Systems</h3>
-            <p>Optimized vehicle testing and revamped embedded icsneo codebase.</p>
-          </div>
-        </div>
-      </div>
-      <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#projects'"/>
-    </section>
+    <!-- CRT Scanline Overlay -->
+    <div id="crt-overlay" class="hidden"></div>
 
-    <!-- 3. Projects Section -->
-    <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="about-containers">
-        <div class="details-container">
-          <img src="./assets/Wagoo.jpeg" alt="Wagoo" class="project-img" loading="lazy" />
-          <h2 class="project-title">Wagoo</h2>
-          <div class="btn-container">
-            <button class="btn btn-color-2" onclick="window.open('https://wagoo.ai', '_blank', 'noopener noreferrer')">Website</button>
-          </div>
-        </div>
-        <div class="details-container">
-          <img src="./assets/clash-scan-logo.png" alt="Clash Scan" class="project-img" loading="lazy" />
-          <h2 class="project-title">Clash Scan</h2>
-          <div class="btn-container">
-            <button class="btn btn-color-2" onclick="window.open('https://clashscan.com', '_blank', 'noopener noreferrer')">Website</button>
-          </div>
-        </div>
-        <div class="details-container">
-          <img src="./assets/project-3.png" alt="EEG-To-Text" class="project-img" loading="lazy" />
-          <h2 class="project-title">EEG-To-Text</h2>
-          <div class="btn-container">
-            <button class="btn btn-color-2" onclick="window.open('https://github.com/VSPuzzler', '_blank', 'noopener noreferrer')">GitHub</button>
-          </div>
-        </div>
-      </div>
-      <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#publications'"/>
-    </section>
-
-    <!-- 4. Publications Section -->
-    <section id="publications">
-      <p class="section__text__p1">Research & Papers</p>
-      <h1 class="title">Publications</h1>
-      <div class="about-containers">
-        <div class="details-container">
-          <h2 class="project-title">Frontiers 2025: Higher frequency of prokaryotic low complexity regions in core and orthologous genes</h2>
-          <div class="btn-container">
-            <button class="btn btn-color-2" onclick="window.open('https://www.frontiersin.org/journals/bioinformatics/articles/10.3389/fbinf.2025.1673480/full', '_blank', 'noopener noreferrer')">Paper Link</button>
-          </div>
-        </div>
-        <div class="details-container">
-          <h2 class="project-title">ACL 2025: Design of a Multilevel Propaganda-Classification System</h2>
-          <div class="btn-container">
-            <button class="btn btn-color-2" onclick="window.open('https://aclanthology.org/', '_blank', 'noopener noreferrer')">Paper Link</button>
-          </div>
-        </div>
-        <div class="details-container">
-          <h2 class="project-title">NAACL 2024: OUNLP at SemEval-2024 Task 9: Retrieval-Augmented Generation for Solving Brain Teasers with LLMs</h2>
-          <div class="btn-container">
-            <button class="btn btn-color-2" onclick="window.open('https://aclanthology.org/2024.semeval-1.32.pdf', '_blank', 'noopener noreferrer')">Paper Link</button>
-          </div>
-        </div>
-        <div class="details-container">
-          <h2 class="project-title">ACL 2023: Novel Clickbait Spoiling Algorithm Using NLP</h2>
-          <div class="btn-container">
-            <button class="btn btn-color-2" onclick="window.open('https://aclanthology.org/2023.semeval-1.225.pdf', '_blank', 'noopener noreferrer')">Paper Link</button>
-          </div>
-        </div>
-        <div class="details-container">
-          <h2 class="project-title">JEI 2024: Enhanced Brain Arteries and Aneurysms Analysis Using CAE-CFD Approach</h2>
-          <div class="btn-container">
-            <button class="btn btn-color-2" onclick="window.open('https://doi.org/10.59720/24-156', '_blank', 'noopener noreferrer')">Paper Link</button>
-          </div>
-        </div>
-      </div>
-      <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#skills'"/>
-    </section>
-
-    <!-- 5. Skills Section -->
-    <section id="skills">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Skills</h1>
-      <div class="about-containers">
-        <div class="details-container">
-          <h2 class="experience-sub-title">Languages & Frameworks</h2>
-          <div class="skills-list">
-            <span>Python</span>
-            <span>Java</span>
-            <span>C++</span>
-            <span>Node.js</span>
-            <span>TypeScript</span>
-            <span>React</span>
-            <span>PyTorch</span>
-            <span>TensorFlow</span>
-            <span>Supabase</span>
-            <span>PineScript</span>
-          </div>
-        </div>
-        <div class="details-container">
-          <h2 class="experience-sub-title">Tools & Engineering</h2>
-          <div class="skills-list">
-            <span>AWS</span>
-            <span>Docker</span>
-            <span>Git</span>
-            <span>GitHub Actions</span>
-            <span>Fusion 360</span>
-            <span>SolidWorks</span>
-            <span>CFD (Ansys)</span>
-            <span>Unity</span>
-            <span>HuggingFace</span>
-            <span>AlphaFold</span>
-          </div>
-        </div>
-      </div>
-      <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#about'"/>
-    </section>
-
-    <!-- 6. About Section -->
-    <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
-      <div class="section-container">
-        <img src="./assets/about-pic.png" alt="Profile picture" class="about-pic" loading="lazy"/>
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img src="./assets/experience.png" alt="Experience icon" class="icon" />
-              <h3>Background</h3>
-              <p>Full-Stack Development<br />AI & Research</p>
+    <!-- Desktop Wallpaper -->
+    <div id="desktop-wallpaper">
+      <div class="grid-pattern"></div>
+      <div class="gradient-overlay"></div>
+      <!-- Retro Computer Character -->
+      <div class="wallpaper-character">
+        <div class="retro-computer">
+          <div class="computer-screen">
+            <div class="screen-content">
+              <span class="blink-cursor">_</span>
             </div>
-            <div class="details-container">
-              <img src="./assets/education.png" alt="Education icon" class="icon" />
+            <div class="screen-scanlines"></div>
+          </div>
+          <div class="computer-base">
+            <div class="floppy-slot"></div>
+            <div class="computer-vents">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+          <div class="computer-stand"></div>
+          <div class="keyboard">
+            <div class="key-row">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="key-row">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="key-row spacebar">
+              <span></span>
+            </div>
+          </div>
+        </div>
+        <div class="character-glow"></div>
+      </div>
+      <!-- Floating Elements -->
+      <div class="floating-elements">
+        <div class="floating-star" style="top: 15%; left: 60%;"></div>
+        <div class="floating-star" style="top: 25%; left: 75%;"></div>
+        <div class="floating-star" style="top: 40%; left: 85%;"></div>
+        <div class="floating-star" style="top: 60%; left: 70%;"></div>
+        <div class="floating-star" style="top: 80%; left: 80%;"></div>
+        <div class="floating-pixel" style="top: 20%; left: 55%;"></div>
+        <div class="floating-pixel" style="top: 50%; left: 90%;"></div>
+        <div class="floating-pixel" style="top: 70%; left: 65%;"></div>
+      </div>
+    </div>
+
+    <!-- Desktop Container -->
+    <div id="desktop">
+      <!-- Icon Grid - Scattered positions -->
+      <div id="icon-grid">
+        <!-- Experience - Briefcase icon (top left) -->
+        <div class="desktop-icon" data-window="experience" style="position: absolute; left: 60px; top: 80px;">
+          <div class="icon-image experience-icon">
+            <i class="fa-solid fa-briefcase"></i>
+          </div>
+          <span class="icon-label">Experience</span>
+        </div>
+
+        <!-- Skills - Code/Terminal icon (top center-left) -->
+        <div class="desktop-icon" data-window="skills" style="position: absolute; left: 320px; top: 40px;">
+          <div class="icon-image skills-icon">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <span class="icon-label">Skills</span>
+        </div>
+
+        <!-- Resume - Document/Paper icon (top right) -->
+        <div class="desktop-icon" data-window="resume" style="position: absolute; right: 120px; top: 100px;">
+          <div class="icon-image resume-icon">
+            <i class="fa-solid fa-file-lines"></i>
+          </div>
+          <span class="icon-label">Resume</span>
+        </div>
+
+        <!-- About Me - Person/User icon (middle left) -->
+        <div class="desktop-icon" data-window="about" style="position: absolute; left: 340px; top: 280px;">
+          <div class="icon-image about-icon">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <span class="icon-label">About Me</span>
+        </div>
+
+        <!-- Contact - Envelope icon (middle center) -->
+        <div class="desktop-icon" data-window="contact" style="position: absolute; left: 540px; top: 240px;">
+          <div class="icon-image contact-icon">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <span class="icon-label">Contact</span>
+        </div>
+
+        <!-- Projects - Folder icon (middle right) -->
+        <div class="desktop-icon" data-window="projects" style="position: absolute; right: 100px; top: 260px;">
+          <div class="icon-image projects-icon">
+            <i class="fa-solid fa-folder-open"></i>
+          </div>
+          <span class="icon-label">Projects</span>
+        </div>
+
+        <!-- Media - Play/Video icon (bottom left) -->
+        <div class="desktop-icon" data-window="media" style="position: absolute; left: 50px; top: 420px;">
+          <div class="icon-image media-icon">
+            <i class="fa-solid fa-play"></i>
+          </div>
+          <span class="icon-label">Media</span>
+        </div>
+
+        <!-- GitHub - GitHub logo (bottom center) -->
+        <div class="desktop-icon" data-link="https://github.com/VSPuzzler" style="position: absolute; left: 540px; top: 440px;">
+          <div class="icon-image github-icon">
+            <i class="fa-brands fa-github"></i>
+          </div>
+          <span class="icon-label">GitHub</span>
+        </div>
+
+        <!-- Research - Book/Publication icon (bottom right) -->
+        <div class="desktop-icon" data-window="research" style="position: absolute; right: 200px; top: 400px;">
+          <div class="icon-image research-icon">
+            <i class="fa-solid fa-book"></i>
+          </div>
+          <span class="icon-label">Research</span>
+        </div>
+      </div>
+
+      <!-- Windows Container -->
+      <div id="windows-container">
+        <!-- About Me Window -->
+        <div class="window" id="window-about" style="display: none;">
+          <div class="window-titlebar">
+            <div class="window-title">
+              <i class="fa-solid fa-user"></i>
+              <span>About Me</span>
+            </div>
+            <div class="window-controls">
+              <button class="window-btn minimize-btn" title="Minimize">_</button>
+              <button class="window-btn maximize-btn" title="Maximize">[]</button>
+              <button class="window-btn close-btn" title="Close">X</button>
+            </div>
+          </div>
+          <div class="window-content">
+            <div class="about-header">
+              <img src="./assets/profile-pic.png" alt="Vineet Saravanan" class="about-avatar" />
+              <div class="about-intro">
+                <h1>Vineet Saravanan</h1>
+                <p class="subtitle">Computer Science, Data Science, and Economics @ MIT</p>
+                <div class="social-links">
+                  <a href="https://linkedin.com/in/vineet-saravanan" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+                  <a href="https://github.com/VSPuzzler" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+                  <a href="https://www.youtube.com/vspuzzler" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
+                  <a href="https://www.instagram.com/vineets.mp4/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="about-bio">
+              <p>I am a student at MIT pursuing Computer Science, Data Science, and Economics. As the Co-Founder & COO of Wagoo (wagoo.ai), I build tools for lending firms. My background spans full-stack development, LLM integration, and multimodal research at MIT CSAIL. I am passionate about building tools that reduce friction and exploring the intersection of AI, finance, and robotics.</p>
+            </div>
+            <div class="about-stats">
+              <div class="stat-card">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <div>
+                  <h4>Education</h4>
+                  <p>MIT - BS in CS, Data Science, & Economics</p>
+                </div>
+              </div>
+              <div class="stat-card">
+                <i class="fa-solid fa-rocket"></i>
+                <div>
+                  <h4>Current Role</h4>
+                  <p>Co-Founder & COO @ Wagoo</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projects Window -->
+        <div class="window" id="window-projects" style="display: none;">
+          <div class="window-titlebar">
+            <div class="window-title">
+              <i class="fa-solid fa-folder-open"></i>
+              <span>Projects</span>
+            </div>
+            <div class="window-controls">
+              <button class="window-btn minimize-btn" title="Minimize">_</button>
+              <button class="window-btn maximize-btn" title="Maximize">[]</button>
+              <button class="window-btn close-btn" title="Close">X</button>
+            </div>
+          </div>
+          <div class="window-content">
+            <div class="project-grid">
+              <div class="project-card">
+                <img src="./assets/Wagoo.jpeg" alt="Wagoo" class="project-img" />
+                <div class="project-info">
+                  <h3>Wagoo</h3>
+                  <p>Screen-aware AI and voice agents with MCPs for lending firms. Built with React, Node.js, and advanced LLM integrations.</p>
+                  <a href="https://wagoo.ai" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Website
+                  </a>
+                </div>
+              </div>
+              <div class="project-card">
+                <img src="./assets/clash-scan-logo.png" alt="Clash Scan" class="project-img" />
+                <div class="project-info">
+                  <h3>Clash Scan</h3>
+                  <p>AI-powered game analysis tool for Clash of Clans. Computer vision and strategic insights for competitive play.</p>
+                  <a href="https://clashscan.com" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Website
+                  </a>
+                </div>
+              </div>
+              <div class="project-card">
+                <img src="./assets/project-3.png" alt="Aneurysm Detection" class="project-img" />
+                <div class="project-info">
+                  <h3>Brain Aneurysm Detection</h3>
+                  <p>CAE-CFD approach for enhanced brain arteries and aneurysms analysis using medical imaging.</p>
+                  <a href="https://github.com/VSPuzzler/BrainAneurysm" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <i class="fa-brands fa-github"></i> View on GitHub
+                  </a>
+                </div>
+              </div>
+              <div class="project-card">
+                <img src="./assets/eeg-project.png" alt="EEG-to-Text" class="project-img" />
+                <div class="project-info">
+                  <h3>EEG-to-Text</h3>
+                  <p>Built a low-cost EEG headset from scratch and developed an EEG-to-text system using a transformer-based RNN architecture for brain-computer interfacing.</p>
+                  <a href="#" class="project-link">
+                    <i class="fa-solid fa-brain"></i> Coming Soon
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience Window -->
+        <div class="window" id="window-experience" style="display: none;">
+          <div class="window-titlebar">
+            <div class="window-title">
+              <i class="fa-solid fa-briefcase"></i>
+              <span>Experience</span>
+            </div>
+            <div class="window-controls">
+              <button class="window-btn minimize-btn" title="Minimize">_</button>
+              <button class="window-btn maximize-btn" title="Maximize">[]</button>
+              <button class="window-btn close-btn" title="Close">X</button>
+            </div>
+          </div>
+          <div class="window-content">
+            <div class="experience-list">
+              <div class="experience-item">
+                <div class="exp-header">
+                  <div class="exp-icon"><i class="fa-solid fa-microchip"></i></div>
+                  <div class="exp-title">
+                    <h3>MIT CSAIL</h3>
+                    <span class="exp-date">2025 - Present</span>
+                  </div>
+                </div>
+                <p>Researcher developing digit classification and DST behavior detection algorithms.</p>
+              </div>
+              <div class="experience-item">
+                <div class="exp-header">
+                  <div class="exp-icon"><i class="fa-solid fa-rocket"></i></div>
+                  <div class="exp-title">
+                    <h3>Wagoo (wagoo.ai)</h3>
+                    <span class="exp-date">2025 - Present</span>
+                  </div>
+                </div>
+                <p>Co-Founder building screen-aware AI and voice agents with MCPs.</p>
+              </div>
+              <div class="experience-item">
+                <div class="exp-header">
+                  <div class="exp-icon"><i class="fa-solid fa-chart-line"></i></div>
+                  <div class="exp-title">
+                    <h3>Rockbridge Growth Equity</h3>
+                    <span class="exp-date">2025</span>
+                  </div>
+                </div>
+                <p>Conducted due diligence and built automated Python CIM analysis tools.</p>
+              </div>
+              <div class="experience-item">
+                <div class="exp-header">
+                  <div class="exp-icon"><i class="fa-solid fa-car"></i></div>
+                  <div class="exp-title">
+                    <h3>Intrepid Control Systems</h3>
+                    <span class="exp-date">2024</span>
+                  </div>
+                </div>
+                <p>Optimized vehicle testing and revamped embedded icsneo codebase.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Research Window -->
+        <div class="window" id="window-research" style="display: none;">
+          <div class="window-titlebar">
+            <div class="window-title">
+              <i class="fa-solid fa-flask"></i>
+              <span>Publications & Research</span>
+            </div>
+            <div class="window-controls">
+              <button class="window-btn minimize-btn" title="Minimize">_</button>
+              <button class="window-btn maximize-btn" title="Maximize">[]</button>
+              <button class="window-btn close-btn" title="Close">X</button>
+            </div>
+          </div>
+          <div class="window-content">
+            <div class="publication-list">
+              <div class="publication-item">
+                <span class="pub-venue">Frontiers 2025</span>
+                <h3>Higher frequency of prokaryotic low complexity regions in core and orthologous genes</h3>
+                <a href="https://www.frontiersin.org/journals/bioinformatics/articles/10.3389/fbinf.2025.1673480/full" target="_blank" rel="noopener noreferrer" class="pub-link">
+                  <i class="fa-solid fa-file-pdf"></i> Read Paper
+                </a>
+              </div>
+              <div class="publication-item">
+                <span class="pub-venue">ACL 2025</span>
+                <h3>Design of a Multilevel Propaganda-Classification System</h3>
+                <a href="https://aclanthology.org/" target="_blank" rel="noopener noreferrer" class="pub-link">
+                  <i class="fa-solid fa-file-pdf"></i> Read Paper
+                </a>
+              </div>
+              <div class="publication-item">
+                <span class="pub-venue">NAACL 2024</span>
+                <h3>OUNLP at SemEval-2024 Task 9: Retrieval-Augmented Generation for Solving Brain Teasers with LLMs</h3>
+                <a href="https://aclanthology.org/2024.semeval-1.32.pdf" target="_blank" rel="noopener noreferrer" class="pub-link">
+                  <i class="fa-solid fa-file-pdf"></i> Read Paper
+                </a>
+              </div>
+              <div class="publication-item">
+                <span class="pub-venue">ACL 2023</span>
+                <h3>Novel Clickbait Spoiling Algorithm Using NLP</h3>
+                <a href="https://aclanthology.org/2023.semeval-1.225.pdf" target="_blank" rel="noopener noreferrer" class="pub-link">
+                  <i class="fa-solid fa-file-pdf"></i> Read Paper
+                </a>
+              </div>
+              <div class="publication-item">
+                <span class="pub-venue">JEI 2024</span>
+                <h3>Enhanced Brain Arteries and Aneurysms Analysis Using CAE-CFD Approach</h3>
+                <a href="https://doi.org/10.59720/24-156" target="_blank" rel="noopener noreferrer" class="pub-link">
+                  <i class="fa-solid fa-file-pdf"></i> Read Paper
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skills Window -->
+        <div class="window" id="window-skills" style="display: none;">
+          <div class="window-titlebar">
+            <div class="window-title">
+              <i class="fa-solid fa-code"></i>
+              <span>Skills</span>
+            </div>
+            <div class="window-controls">
+              <button class="window-btn minimize-btn" title="Minimize">_</button>
+              <button class="window-btn maximize-btn" title="Maximize">[]</button>
+              <button class="window-btn close-btn" title="Close">X</button>
+            </div>
+          </div>
+          <div class="window-content">
+            <div class="skills-section">
+              <h3><i class="fa-solid fa-terminal"></i> Languages & Frameworks</h3>
+              <div class="skills-tags">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">TypeScript</span>
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">PyTorch</span>
+                <span class="skill-tag">TensorFlow</span>
+                <span class="skill-tag">Supabase</span>
+                <span class="skill-tag">PineScript</span>
+              </div>
+            </div>
+            <div class="skills-section">
+              <h3><i class="fa-solid fa-wrench"></i> Tools & Engineering</h3>
+              <div class="skills-tags">
+                <span class="skill-tag">AWS</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">GitHub Actions</span>
+                <span class="skill-tag">Fusion 360</span>
+                <span class="skill-tag">SolidWorks</span>
+                <span class="skill-tag">CFD (Ansys)</span>
+                <span class="skill-tag">Unity</span>
+                <span class="skill-tag">HuggingFace</span>
+                <span class="skill-tag">AlphaFold</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Media Window -->
+        <div class="window" id="window-media" style="display: none;">
+          <div class="window-titlebar">
+            <div class="window-title">
+              <i class="fa-solid fa-video"></i>
+              <span>Content & Media</span>
+            </div>
+            <div class="window-controls">
+              <button class="window-btn minimize-btn" title="Minimize">_</button>
+              <button class="window-btn maximize-btn" title="Maximize">[]</button>
+              <button class="window-btn close-btn" title="Close">X</button>
+            </div>
+          </div>
+          <div class="window-content">
+            <div class="media-grid">
+              <div class="media-card">
+                <div class="media-icon youtube">
+                  <i class="fa-brands fa-youtube"></i>
+                </div>
+                <div class="media-info">
+                  <h3>YouTube</h3>
+                  <p>@vspuzzler</p>
+                  <a href="https://www.youtube.com/vspuzzler" target="_blank" rel="noopener noreferrer" class="media-link">
+                    Watch Channel <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="media-card">
+                <div class="media-icon instagram">
+                  <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div class="media-info">
+                  <h3>Instagram</h3>
+                  <p>@vineets.mp4</p>
+                  <a href="https://www.instagram.com/vineets.mp4/" target="_blank" rel="noopener noreferrer" class="media-link">
+                    Follow Profile <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Resume Window -->
+        <div class="window" id="window-resume" style="display: none;">
+          <div class="window-titlebar">
+            <div class="window-title">
+              <i class="fa-solid fa-file-lines"></i>
+              <span>Resume / CV</span>
+            </div>
+            <div class="window-controls">
+              <button class="window-btn minimize-btn" title="Minimize">_</button>
+              <button class="window-btn maximize-btn" title="Maximize">[]</button>
+              <button class="window-btn close-btn" title="Close">X</button>
+            </div>
+          </div>
+          <div class="window-content resume-content">
+            <div class="resume-header">
+              <h2>Vineet Saravanan</h2>
+              <p>MIT | CS, Data Science & Economics</p>
+            </div>
+            <div class="resume-section">
               <h3>Education</h3>
-              <p>Massachusetts Institute of Technology<br />BS in CS, Data Science, & Economics</p>
+              <div class="resume-item">
+                <strong>Massachusetts Institute of Technology</strong>
+                <span>2025 - 2028</span>
+                <p>Bachelor of Science in Computer Science, Data Science, and Economics</p>
+              </div>
+            </div>
+            <div class="resume-section">
+              <h3>Highlights</h3>
+              <ul>
+                <li>Co-Founder & COO at Wagoo - Building AI tools for lending firms</li>
+                <li>MIT CSAIL Researcher - Digit classification & DST behavior detection</li>
+                <li>5+ peer-reviewed publications at ACL, NAACL, Frontiers</li>
+                <li>Full-stack development with React, Node.js, Python, AWS</li>
+              </ul>
+            </div>
+            <a href="mailto:vineet7@mit.edu" class="resume-cta">
+              <i class="fa-solid fa-envelope"></i> Request Full Resume
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact Window -->
+        <div class="window" id="window-contact" style="display: none;">
+          <div class="window-titlebar">
+            <div class="window-title">
+              <i class="fa-solid fa-envelope"></i>
+              <span>Contact</span>
+            </div>
+            <div class="window-controls">
+              <button class="window-btn minimize-btn" title="Minimize">_</button>
+              <button class="window-btn maximize-btn" title="Maximize">[]</button>
+              <button class="window-btn close-btn" title="Close">X</button>
             </div>
           </div>
-          <div class="text-container">
-            <p>
-              I am a student at MIT pursuing Computer Science, Data Science, and Economics. 
-              As the Co-Founder & COO of Wagoo (wagoo.ai), I build tools for lending firms. 
-              My background spans full-stack development, LLM integration, and multimodal research at MIT CSAIL. 
-              I am passionate about building tools that reduce friction and exploring the intersection of AI, finance, and robotics.
-            </p>
+          <div class="window-content">
+            <div class="contact-grid">
+              <a href="mailto:vineet7@mit.edu" class="contact-card">
+                <i class="fa-solid fa-envelope"></i>
+                <div>
+                  <h4>Email</h4>
+                  <span>vineet7@mit.edu</span>
+                </div>
+              </a>
+              <a href="https://linkedin.com/in/vineet-saravanan" target="_blank" rel="noopener noreferrer" class="contact-card">
+                <i class="fa-brands fa-linkedin"></i>
+                <div>
+                  <h4>LinkedIn</h4>
+                  <span>vineet-saravanan</span>
+                </div>
+              </a>
+              <a href="https://github.com/VSPuzzler" target="_blank" rel="noopener noreferrer" class="contact-card">
+                <i class="fa-brands fa-github"></i>
+                <div>
+                  <h4>GitHub</h4>
+                  <span>VSPuzzler</span>
+                </div>
+              </a>
+              <a href="https://www.youtube.com/vspuzzler" target="_blank" rel="noopener noreferrer" class="contact-card">
+                <i class="fa-brands fa-youtube"></i>
+                <div>
+                  <h4>YouTube</h4>
+                  <span>@vspuzzler</span>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </div>
-      <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#content-creation'"/>
-    </section>
+    </div>
 
-    <!-- 7. Content Creation Section -->
-    <section id="content-creation">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Content Creation</h1>
-        <div class="about-containers">
-          <div class="details-container">
-          <h2 class="experience-sub-title">YouTube</h2>
-          <p>@vspuzzler</p>
-            <div class="btn-container">
-            <button class="btn btn-color-2" onclick="window.open('https://www.youtube.com/vspuzzler', '_blank', 'noopener noreferrer')">Watch Channel</button>
-          </div>
-        </div>
-        <div class="details-container">
-          <h2 class="experience-sub-title">Instagram</h2>
-          <p>@vineets.mp4</p>
-            <div class="btn-container">
-            <button class="btn btn-color-2" onclick="window.open('https://www.instagram.com/vineets.mp4/', '_blank', 'noopener noreferrer')">Follow Profile</button>
-          </div>
-        </div>
+    <!-- Taskbar -->
+    <div id="taskbar">
+      <button id="start-btn">
+        <span class="start-logo">VS</span>
+        <span class="start-text">Start</span>
+      </button>
+      <div id="taskbar-windows"></div>
+      <div id="taskbar-right">
+        <button id="crt-toggle" title="Toggle CRT Effect">
+          <i class="fa-solid fa-tv"></i>
+        </button>
+        <button id="sound-toggle" title="Toggle Sound">
+          <i class="fa-solid fa-volume-high"></i>
+        </button>
+        <div id="taskbar-clock"></div>
       </div>
-      <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#contact'"/>
-    </section>
+    </div>
 
-    <!-- 8. Contact Section -->
-    <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <i class="fa-solid fa-envelope icon"></i>
-          <p><a href="mailto:vineet7@mit.edu">vineet7@mit.edu</a></p>
-        </div>
-        <div class="contact-info-container">
-          <i class="fa-brands fa-linkedin icon"></i>
-          <p><a href="https://linkedin.com/in/vineet-saravanan" target="_blank">LinkedIn</a></p>
-        </div>
-        <div class="contact-info-container">
-          <i class="fa-brands fa-youtube icon"></i>
-          <p><a href="https://www.youtube.com/vspuzzler" target="_blank">YouTube</a></p>
-        </div>
-        <div class="contact-info-container">
-          <i class="fa-brands fa-instagram icon"></i>
-          <p><a href="https://www.instagram.com/vineets.mp4/" target="_blank">Instagram</a></p>
-        </div>
+    <!-- Start Menu -->
+    <div id="start-menu" class="hidden">
+      <div class="start-menu-header">
+        <img src="./assets/profile-pic.png" alt="Vineet" class="start-avatar" />
+        <span>Vineet Saravanan</span>
       </div>
-    </section>
+      <div class="start-menu-items">
+        <button class="start-item" data-window="about">
+          <i class="fa-solid fa-user"></i> About Me
+        </button>
+        <button class="start-item" data-window="projects">
+          <i class="fa-solid fa-folder-open"></i> Projects
+        </button>
+        <button class="start-item" data-window="experience">
+          <i class="fa-solid fa-briefcase"></i> Experience
+        </button>
+        <button class="start-item" data-window="research">
+          <i class="fa-solid fa-flask"></i> Research
+        </button>
+        <button class="start-item" data-window="skills">
+          <i class="fa-solid fa-code"></i> Skills
+        </button>
+        <button class="start-item" data-window="contact">
+          <i class="fa-solid fa-envelope"></i> Contact
+        </button>
+      </div>
+      <div class="start-menu-footer">
+        <a href="https://github.com/VSPuzzler" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/vineet-saravanan" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://www.youtube.com/vspuzzler" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      </div>
+    </div>
 
-    <footer>
-      <div class="footer-nav">
-          <ul class="nav-links">
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#publications">Publications</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#content-creation">Content</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      <p>Copyright &#169; 2025 Vineet Saravanan. All Rights Reserved.</p>
-    </footer>
+    <!-- Right-Click Context Menu -->
+    <div id="context-menu" class="hidden">
+      <button class="context-item" data-action="about-site">
+        <i class="fa-solid fa-circle-info"></i> About This Website
+      </button>
+      <button class="context-item" data-action="toggle-crt">
+        <i class="fa-solid fa-tv"></i> Toggle CRT Effect
+      </button>
+      <button class="context-item" data-action="toggle-sound">
+        <i class="fa-solid fa-volume-high"></i> Toggle Sound
+      </button>
+      <div class="context-divider"></div>
+      <button class="context-item" data-action="refresh">
+        <i class="fa-solid fa-rotate-right"></i> Refresh Desktop
+      </button>
+    </div>
+
+    <!-- Mobile App Drawer (for responsive) -->
+    <div id="mobile-drawer" class="hidden">
+      <div class="drawer-header">
+        <img src="./assets/profile-pic.png" alt="Vineet" class="drawer-avatar" />
+        <h2>Vineet Saravanan</h2>
+        <p>MIT | CS, Data Science & Economics</p>
+      </div>
+      <div class="drawer-apps">
+        <button class="drawer-app" data-window="about">
+          <i class="fa-solid fa-user"></i>
+          <span>About</span>
+        </button>
+        <button class="drawer-app" data-window="projects">
+          <i class="fa-solid fa-folder-open"></i>
+          <span>Projects</span>
+        </button>
+        <button class="drawer-app" data-window="experience">
+          <i class="fa-solid fa-briefcase"></i>
+          <span>Experience</span>
+        </button>
+        <button class="drawer-app" data-window="research">
+          <i class="fa-solid fa-flask"></i>
+          <span>Research</span>
+        </button>
+        <button class="drawer-app" data-window="skills">
+          <i class="fa-solid fa-code"></i>
+          <span>Skills</span>
+        </button>
+        <button class="drawer-app" data-window="media">
+          <i class="fa-solid fa-video"></i>
+          <span>Media</span>
+        </button>
+        <button class="drawer-app" data-window="resume">
+          <i class="fa-solid fa-file-lines"></i>
+          <span>Resume</span>
+        </button>
+        <button class="drawer-app" data-window="contact">
+          <i class="fa-solid fa-envelope"></i>
+          <span>Contact</span>
+        </button>
+        <a href="https://github.com/VSPuzzler" target="_blank" rel="noopener noreferrer" class="drawer-app external">
+          <i class="fa-brands fa-github"></i>
+          <span>GitHub</span>
+        </a>
+      </div>
+      <div class="drawer-footer">
+        <a href="https://linkedin.com/in/vineet-saravanan" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/VSPuzzler" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.youtube.com/vspuzzler" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.instagram.com/vineets.mp4/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <!-- Mobile Content Panel -->
+    <div id="mobile-content" class="hidden">
+      <div class="mobile-content-header">
+        <button id="mobile-back-btn">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <span id="mobile-content-title">Title</span>
+      </div>
+      <div id="mobile-content-body"></div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
