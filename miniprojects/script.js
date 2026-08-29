@@ -5,11 +5,11 @@
 
 const PROJECTS = [
   {
-    title: "Claude Artifact",
-    blurb: "An interactive artifact built with Claude, running live in the browser.",
+    title: "Gym Tracker",
+    blurb: "Log workouts, track sets and reps, and watch lifts trend over time.",
     url: "https://claude.ai/public/artifacts/bef6759c-e76d-48de-aa20-c26c313fe15d",
-    icon: "fa-solid fa-wand-magic-sparkles",
-    tags: ["claude", "interactive"],
+    icon: "fa-solid fa-dumbbell",
+    tags: ["fitness", "tracker"],
   },
 ];
 
