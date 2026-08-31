@@ -7,7 +7,7 @@ const PROJECTS = [
   {
     title: "Gym Tracker",
     blurb: "Log workouts, track sets and reps, and watch lifts trend over time.",
-    url: "https://claude.ai/public/artifacts/bef6759c-e76d-48de-aa20-c26c313fe15d",
+    url: "https://claude.ai/public/artifacts/e6bcd0c7-6301-42ce-a7d0-616f918cca20",
     icon: "fa-solid fa-dumbbell",
     tags: ["fitness", "tracker"],
   },
